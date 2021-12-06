@@ -32,6 +32,9 @@
     <ClInclude Include="Date.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Header.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\Schmierzettel.txt" />
@@ -39,5 +42,13 @@
   <ItemGroup>
     <None Include="..\Agenda_Grundlagen_Regisafe.md" />
     <None Include="..\Fraction.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Parameters_On_The_Stack.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Pointer_vs_Referenz.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

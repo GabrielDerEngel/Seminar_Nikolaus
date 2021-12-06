@@ -92,3 +92,10 @@ void Date::setDay(int day)
 
     m_day = day;
 }
+
+Date Date::increment(const Date& other)
+{
+    Date leer;
+
+    return leer;
+}

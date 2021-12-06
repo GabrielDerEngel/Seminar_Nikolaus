@@ -9,6 +9,10 @@ peter.loos@gmx.de
 
 ============================================================
 
+Montag
+
+============================================================
+
 a) C++ : Teilmenge: C, Java, Rust, Swift
 
 b) Java, C# (Grundkenntnisse), Python
@@ -323,4 +327,15 @@ Klasse Time:
 
 https://github.com/pelocpp/cpp_general_examples/blob/master/Examples/Time/Resources/Readme.md
 
-// ==========================================
+============================================================
+
+Lösung:
+
+https://github.com/pelocpp/cpp_general_examples/blob/master/Examples/Fraction/Resources/Readme.md
+
+============================================================
+
+Dienstag
+
+============================================================
+

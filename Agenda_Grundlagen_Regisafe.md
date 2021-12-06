@@ -26,19 +26,19 @@
 
 ## Details
 
-  * ctor und dtor (auch "= default")
+  * ctor und dtor (auch "= default") - YES / teilweise
   * raw-pointer und smart-pointer (im Rahmen der Grundlagen)
   * Rule of Three/Five/Zero
-  * Operator overloading
-  * Klassendesign (information hiding, best practices)
-  * Schlüsselwort "this"
+  * Operator overloading - YES
+  * Klassendesign (information hiding, best practices) - YES
+  * Schlüsselwort "this" - YES
   * initializer list
-  * Delegierter ctor Aufruf
-  * Aufteilung von Code in CPP und Header Dateien
-  * Include Guard
+  * Delegierter ctor Aufruf - YES
+  * Aufteilung von Code in CPP und Header Dateien - YES
+  * Include Guard - YES
   * namespaces
-  * NULL vs. nullptr (wir nutzen noch oft "NULL" im alten Code)
-  * Bedeutung von inline
+  * NULL vs. nullptr (wir nutzen noch oft "NULL" im alten Code) - YES
+  * Bedeutung von inline - YES
   * Bedeutung von const und const-correctness (ebenfalls constexpr)
   * Bedeutung von static
   * anonyme namespaces
@@ -50,7 +50,7 @@
   * shallow-copy und deep-copy
   * Container aus der Standardbibliothek (wann welchen Nutzen, Vorteile und Nachteile einzelner Container)
   * Vererbung: public, private, protected ... virtual methods, pure virtual classes usw.
-  * Stack und Heap
+  * Stack und Heap - YES / teilweise
   * Gefahr von nicht initialisierten fundamentalen Datentypen
   * Undefined behaviour
   * "Arten" von for-loops ("alte" for loop (Zählvariable "i"), iterator for loop, range-based for loop)

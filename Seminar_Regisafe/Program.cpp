@@ -1,7 +1,6 @@
 #include "Date.h"
 
-void test_big_data();
-
+extern void test_big_data();
 
 void swap_with_copy(int n, int m)
 {
