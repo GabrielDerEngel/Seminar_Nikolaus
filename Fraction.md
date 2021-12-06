@@ -29,6 +29,9 @@ Folgenden Eigenschaften sollen in Ihrer Realisierung der Klasse `Fraction` Berüc
     * Unärer Minus-Operator (`-`).
     * Vergleichsoperatoren (`==`, `!=`, `<`, `<=`, `>` und `>=`).
 
+  * Implementieren Sie die folgenden mathematischen Rechenoperationen als Methode:
+    * Methode `add`, `sub`, `mul`, `div`
+
   * Methode `gcd` (*greatest common divisor*) zur Bestimmung des größten gemeinsamen Teilers von Zähler und Nenner (*ggT*).
     Die `gcd`-Methode kann von der `reduce`-Methode verwendet werden.
 

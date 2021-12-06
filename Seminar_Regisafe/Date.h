@@ -24,6 +24,9 @@ public:
     inline int getDay() const { return m_day; }
 
     int diff( const Date& other );
+
+    Date& increment(const Date& other);  // 90% Fall  // 6.12 ==> 7.12
+
     void print();
 
     // operators

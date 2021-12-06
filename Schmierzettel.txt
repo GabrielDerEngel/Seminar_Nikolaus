@@ -272,6 +272,47 @@ Beispiel: == bedeutet 2 Operanden.
 
 // ==========================================
 
+Allgemeines // Design:
+
+Date increment(const Date& other);   // 6.12 ==> 7.12
+
+oder
+
+void increment(Date& other);         // 6.12 ==> 7.12
+
+
+Date increment(const Date& other)
+{
+    Date result;
+    ....
+    return result;
+}
+
+
+Soll das Ergebnis im Parameter oder über den Rückgabewert gebildet werden ?
+
+a) GEHT BEIDES:
+
+Mutable or Immutable
+
+Veränderbar oder Unveränderbar
+
+Fraction f1 (3, 7);
+Fraction f2 (4, 9);
+
+Fraction f3;
+
+f3 = f1.add (f2);    // Wo landet offensichtlich das Ergbnis? In f3 !!! Unveränderbar
+
+f1.sum (f2);         // Wo landet offensichtlich das Ergbnis? In f1 !!! Mutable / Veränderbar
+
+oder
+
+f1.add (f2, f3);     // Wo landet offensichtlich das Ergbnis? In f3 !!!   Nicht so schön
+
+IMHO: Mir gefällt die erste Variante am besten.
+
+// ==========================================
 
 
 Übung: Klasse Fraction
