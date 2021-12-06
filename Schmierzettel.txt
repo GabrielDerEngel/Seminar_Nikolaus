@@ -1,0 +1,33 @@
+C++ Grundlagen
+--------------
+
+Guten Morgen :)
+
+Peter Loos
+
+peter.loos@gmx.de
+
+============================================================
+
+a) C++ : Teilmenge: C, Java, Rust, Swift
+
+b) Java, C# (Grundkenntnisse), Python
+
+c) Wiederholung
+
+d) Java (mehr als Grundkenntnisse)
+
+e) Untertreibung 
+
+Spagat: Basiswissen:  Kontrollstrukturen (if, while, for),  Funktionen, Parameter, 
+                        (Prozedurale Programmierung)
+
+============================================================
+
+Montag Vormittag:  Grundlagen
+
+Montag Nachmittag: Übung
+
+Dialog-basiert
+
+============================================================
