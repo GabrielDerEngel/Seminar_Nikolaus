@@ -21,9 +21,15 @@
     <ClCompile Include="Program.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Date.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BigData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Date.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -32,5 +38,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Agenda_Grundlagen_Regisafe.md" />
+    <None Include="..\Fraction.md" />
   </ItemGroup>
 </Project>

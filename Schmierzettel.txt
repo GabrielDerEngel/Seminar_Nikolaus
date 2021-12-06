@@ -31,3 +31,135 @@ Montag Nachmittag: Übung
 Dialog-basiert
 
 ============================================================
+
+Klasse:
+
+Blueprint für Datenstrukturen:  Objekt oder Instanz
+
+Attribute // Variablen der Klasse  // Member ==> m_
+Methoden // Funktionen
+
+C++: Wie ist eine Klasse samt Realisierung zu definieren? 2 Dateien.
+
+a) Eine Header-Datei (Endung: .h)
+
+b) Eine Quell-Datei (Source-File) (Endung: .cpp)
+
+c) Programm // enthält main-Methode // Einsprungpunkt in das Programm
+
+
+Datentypen:  int, float, double, (byte), ubyte_8 (C++ 17), char
+
+i)  Elementaren Datentypen
+
+ii) Benutzerdefinierten Datentypen: Klassen
+
+// ==========================================
+
+Syntaxfehler suchen ...........
+
+Mehrere Möglichkeiten:
+
+a) rechter Mausklick auf Dateiname: Compile (Übersetzen ==> Datei.OBJ)
+
+b) Build Solution (Alle übersetzen + Linker: *.OBJ ==> .EXE)
+
+Zusatz:
+
+Das Ergebnis einer Übersetzung mehrerer Quelldateien (.CPP) 
+kann eine Bibliothek (.LIB) sein.
+
+Folge: Ein Verwender des Projekts bekommt Header-Files (.H)
+und ein .LIB-File.
+
+Aus dem .LIB-File kann keine vernünftige Quelldatei erzeugt werden.
+
+Das KnowHow ist / bleibt geschützt.
+
+// ==========================================
+
+Zugriffsklassen // Sichtbarkeit: Was sehe ich "von außen"?
+Sichtbarkeit:                    Was sehe ich "von innen"?
+
+
+Idiom / Paradigma der OO:
+
+Ein Objekt - genauer: seine Instanzvariablen, "sein Zustand" -
+müssen zu jedem Zeitpunkt gültige Werte enthalten !
+
+// ==========================================
+
+Objekte mit Vorbelegungswerten erzeugen:
+
+Dazu gibt es spezielle Methoden:  Konstruktor(en)
+
+"sie konstruieren das Objekt"
+
+Unterschied zu "normalen" Methoden:
+
+i) Name ist festgelegt: Name der Klasse
+ii) KEIN RÜCKGABETYP
+
+In der Regel hat eine Klasse mehrere Konstruktoren.
+
+Es gibt eine Technik für das "Wiederverwenden" von Konstruktoren-Quellcode:
+
+"C++ Chaining of constructors"  // Verketten von Konstruktoren
+
+ This feature is called "delegating constructors"
+
+// ==============================================
+
+m_day = nullptr;
+
+Das geht nicht:
+
+Weil Variablen elementaren Datentyps KEINE Objekte sind.
+
+nullptr ginge nur bei Zeigern.
+
+Das geht auch nicht bei Java / C# -- wenngleich es hier 
+Unterschiede gibt (Boxing, Unboxing).
+
+(( std::optional ))
+
+"Bei Strings geht das":   std::string ist eine Klasse.
+
+// ==============================================
+
+Copy - Paste Programmierung:
+
+a) Bei Änderungen muss ich n-fach ändern
+
+b) Im dem besagten Stück Quellcode wurde ein Fehler entdeckt:
+
+   Der muss n-fach geändert werden.
+
+   Copy - Paste kopiert auch Fehler :(
+
+
+// ==========================================
+
+inline:
+
+Es erfolgt kein CALL (ein CALL kostet im Vergleich mehr Laufzeit)
+
+Sondern es wird im Maschinencode der Code des Rumpfes eingesetzt.
+
+An einem Beispiel setDay: 14 Opcodes werden "inline" abgesetzt
+
+inline ist ein "Hint" / Hinweis an den Übersetzer:
+
+Tue das; Der Übersetzer entscheidet eigenständig.
+
+// ==========================================
+
+Übung: Klasse Fraction
+
+oder alternativ:
+
+Klasse Time:
+
+https://github.com/pelocpp/cpp_general_examples/blob/master/Examples/Time/Resources/Readme.md
+
+// ==========================================

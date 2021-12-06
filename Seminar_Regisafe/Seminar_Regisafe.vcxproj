@@ -142,16 +142,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BigData.cpp" />
+    <ClCompile Include="Date.cpp" />
     <ClCompile Include="Program.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BigData.h" />
+    <ClInclude Include="Date.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\Schmierzettel.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Agenda_Grundlagen_Regisafe.md" />
+    <None Include="..\Fraction.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
