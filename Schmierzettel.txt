@@ -154,6 +154,126 @@ Tue das; Der Übersetzer entscheidet eigenständig.
 
 // ==========================================
 
+Code-Generator
+
+Optimizer
+
+Release-Mode
+
+inline:  Performance 
+
+Anderes Thema:
+
+Vererbung  // virtual methods
+
+'virtual' bedeutet: INDIREKTER Methodenaufruf
+
+Performance:  Profiling
+
+== regular expression
+== std::string concatenation
+
+Meine Meinung: IMHO
+
+== Lesbarkeit: Sehr wichtig
+
+== std::vector
+
+   std::map   (Inhalt liegt sortiert vor)
+
+   std::unordered_map  (Inhalt liegt NICHT sortiert vor)
+
+   Suchen : Muss man tun. Wenn häufiger gesicht wird: Container wichtig.
+
+== Call-by-XXX : "Wie häufig übergebe ich eine Kopie (unabsichtlich !!!)" // '&'
+
+== STL ist sehr effizient und auch performant, wenn man sie richtig einsetzt.
+
+    -- pro STL: Denken in "Bausteinen" // Rumpf der beteiligten "Funktion"
+
+    -- contra STL: Das eine oder andere kann man (Beispiel: geschachtelte Schleifen)
+             bequemer // effizienter programmieren.
+             Möglicherweise fehleranfälliger IMHO.
+
+
+== Kryptisches C:   Nebeneffekt    if (a > b && c < d++)  Was ist wenn a nicht größer b ist ???
+
+                                    Short Circuit Evaluation
+
+// ==========================================
+
+Wozu gibt es Referenzen in C++?
+
+Pointer sind "ähnlich" und können alles.
+
+a) Pointer können zu Fehlern führen:  zb bei der Pointer-Arithmetik (zb ++ip)
+   
+b) Um für den indirekten Zugriff eine einfachere Schreibweise zu haben !!!
+   -----------------------------------------------------------------------
+
+   Man hat den * (Dereferenzierung) weggelassen !!!
+
+
+C:     ++ *ip;     // unter der Annahme, dass ip gültig ist
+
+C++:   ++ri;       // unter Beachtung, dass ri per Definition immer gültig ist
+
+
+Bemerkung: C ist in C++ enthalten - das war eine Entwurfsentscheidung bei der Definition von C++.
+
+// ==========================================
+
+Parameterübergabe:
+
+Prinzipiell: 
+
+a) Value-based Languages
+
+      C++: Per Default wird alles kopiert, per Wert weitergereicht
+
+b) Reference-based Languages:
+
+      C# , Java: Alles wird über eine Referenz erreicht (Ausnahme: elem. Datentypen)
+
+      
+In C++ können wir auch Parameter-Übergabe per Poiner / Referenz machen.
+
+
+Besser : Call-by-Reference - (also keine C-Style Pointer).
+
+
+Der Stack kann - im Gegensatz zu anderen Segmenten -
+nur über ein Register angesprochen werden:
+
+SP: Stack Pointer
+
+Push:    ++ SP
+Pop:     -- SP
+Ret
+Call
+
+// ==========================================
+
+
+// Überladen von Operatoren
+
+Geht für nahezu alle Standard-C++-Operatoren.
+
+Es sind nur Standard-C++-Operatoren erlaubt!
+
+Und zu beachten ist:
+
+Technisch wie das Erstellen einer Methoden / mit einem speziellen Namen.
+
+Stelligkeit:  Es muss die Anzahl der Operanden identisch wie mit dem
+vordefinierten Fall übereinstimmen.
+
+Beispiel: == bedeutet 2 Operanden.
+
+// ==========================================
+
+
+
 Übung: Klasse Fraction
 
 oder alternativ:

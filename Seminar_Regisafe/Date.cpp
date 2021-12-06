@@ -50,6 +50,31 @@ void Date::print()
     std::cout << m_day << ":" << m_month << ":"  << m_year;
 }
 
+int Date::diff(const Date& other)   // Security
+{
+    // int tmp = ++ other.m_day;
+
+    int result = m_day - other.m_day;
+
+    return result;  // sometimes correct result
+}
+
+bool Date::operator == (const Date& other)
+{
+    return 
+        m_day == other.m_day and
+        m_month == other.m_month and 
+        m_year == other.m_year;
+}
+
+bool operator == (const Date& left, const Date& right)
+{
+    return 
+        left.getDay() == right.getDay() and
+        left.m_month == right.m_month and
+        left.m_year == right.m_year;
+}
+
 //void Date::setDay(int day)
 //{
 //    // nicht ganz korrekt, aber besser .............

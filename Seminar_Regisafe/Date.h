@@ -17,12 +17,31 @@ public:
     Date(int day, int month);
     Date(int day, int month, int year);
 
-
     // spez. Methoden zum Verändern von Instanzvariablen:
     // setter / getter
+    // öffentlich Schnittstelle / public interface
     inline void setDay(int day);
+    inline int getDay() const { return m_day; }
 
+    int diff( const Date& other );
     void print();
 
+    // operators
+    // bool operator ! ();  // unärer Operator
+
+    // in der Klasse
+    bool operator == (const Date& other);
+
     friend std::ostream& operator<< (std::ostream&, const Date&);
+
+private:
+    // private Schnittstelle / private interface / Hilfsmethoden
+    int helper();
+    int helper(int para);
+
+    friend bool operator == (const Date& left, const Date& right);
 };
+
+// ODER als globale Funktion
+bool operator == (const Date& left, const Date& right);
+
