@@ -141,6 +141,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Account.cpp" />
     <ClCompile Include="BigData.cpp" />
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="Program.cpp" />

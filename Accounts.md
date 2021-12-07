@@ -1,4 +1,4 @@
-# Beispiel "Bankkonten und Bankinstitut"
+# Beispiel "Bankkonten"
 
 Erstellen Sie eine Klasse `Account`, die das Guthaben eines Kontos verwaltet.
 Zum Anlegen eines Kontos benötigt man (zur Vereinfachung der Aufgabenstellung) nur eine Kontonummer.

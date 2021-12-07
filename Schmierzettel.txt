@@ -624,3 +624,21 @@ Unterschied: interface // Abstrakte Klasse
 
 // ==================================================
 
+Mittwoch:
+
+Besprechung Musterlösung
+
+Templates (nutzen und selbst programmieren, in einfacher Form)
+
+Template-Klassen und Template-Funktion
+
+Container
+
+Iteratoren
+
+Algorithmen
+
+Functors
+
+// ==================================================
+

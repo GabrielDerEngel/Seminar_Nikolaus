@@ -2,10 +2,8 @@
 
 extern void testVererbung();
 extern void testVererbungZWEI();
-
+extern void test_accounts();
 extern void test_big_data();
-
-extern void tueWas();
 
 // static
 // Wir wollen alle erzeugten Objekte von Beispiel zählen:
@@ -185,8 +183,8 @@ void test_date()
 
 int main() 
 {
-    // tueWas();
-    testVererbungZWEI();
+    test_accounts();
+    //testVererbungZWEI();
     //testTernaryOperator();
     //testCounter();
     //test_big_data();
