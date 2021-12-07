@@ -158,8 +158,11 @@
     <None Include="..\Fraction.md" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\Flat_vs-deep_Copy.png" />
     <Image Include="..\Parameters_On_The_Stack.png" />
     <Image Include="..\Pointer_vs_Referenz.png" />
+    <Image Include="..\Segments.png" />
+    <Image Include="..\StackFrame.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

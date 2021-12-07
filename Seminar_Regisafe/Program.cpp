@@ -2,6 +2,16 @@
 
 extern void test_big_data();
 
+
+int g_global = 123;
+
+void void_stack_vs_heap(int n)
+{
+    int* ip = new int;
+
+    delete ip;
+}
+
 void swap_with_copy(int n, int m)
 {
     int tmp = n;
@@ -96,7 +106,9 @@ void test_date()
 
 int main() 
 {
-    test_date_02();
+    test_big_data();
+    //void_stack_vs_heap(20);
+    //test_date_02();
     //test_date();
     return 0;
 }

@@ -227,6 +227,30 @@ Bemerkung: C ist in C++ enthalten - das war eine Entwurfsentscheidung bei der De
 
 // ==========================================
 
+Dynamische Objekte:
+
+== Klassischen Weise:   int*
+
+== Modernen Weise:      Smart Pointer (std::unique_ptr, ...)
+
+
+
+// ==========================================
+
+
+C#, Java: Sind konzeptionell EINFACHER 
+
+new, delete nicht auf andere Art und Weise lösen kann:  GC
+
+Warum hat C++ keine GC ???
+
+Weil C++ in seiner Def. zu komplex ist.
+
+JVM
+
+// ==========================================
+
+
 Parameterübergabe:
 
 Prinzipiell: 
@@ -234,10 +258,12 @@ Prinzipiell:
 a) Value-based Languages
 
       C++: Per Default wird alles kopiert, per Wert weitergereicht
+      Werte liegen am Stack
 
 b) Reference-based Languages:
 
       C# , Java: Alles wird über eine Referenz erreicht (Ausnahme: elem. Datentypen)
+      Alles liegt am Heap
 
       
 In C++ können wir auch Parameter-Übergabe per Poiner / Referenz machen.
@@ -335,7 +361,151 @@ https://github.com/pelocpp/cpp_general_examples/blob/master/Examples/Fraction/Re
 
 ============================================================
 
-Dienstag
+Dienstag:
+
+Dynamische Daten
+
+Big-Three
+
+static
+
+Ternary operator
+
+post und pre increment
+
+shallow-copy und deep-copy
+
+namespaces / anonyme namespaces
+
+NULL vs. nullptr    
+
+Undefined behaviour
+
+Vererbung:  virtual / non virtual
+
+Big-Five oder viele der Details abarbeiten.
 
 ============================================================
 
+Welche Lebensdauer bzgl. Objekten gibt es in C++:
+
+== Lokale Variablen / Objekte ("wenn der Scope verlassen wird")
+    Typischerweise Variablen von Methoden
+    Werden am STACK_SEGMENT angelegt / abgeräumt (Stack-Pointer)
+    Wer verwaltet den Stackzeiger?
+    Einige Op-Codes: push, pop, call, ret
+    Es wird ein STACK FRAME pro Unterprogramm Aufruf angelegt auf dem Stack
+    ... und bei RET wird dieser wieder abgeräumt
+
+== Globale Variablen
+    Sind von überall erreichbar // problematisch bei der Fehlersuche
+    Sind die gesamte Laufzeit vorhanden (wenn dieser Bereich groß)
+    Werden in einem DATA_SEGMENT angelegt.
+
+== Dynamische Objekte
+    Liegen am Heap / Halde
+    Intel: EX : EXTRA_SEGMENT
+    Werden mit new allokiert ... und mit delete freigegeben.
+    Die Daten stehen bei Gebrauch zur Verfügung ... und sind danach aber EXPLIZIT freizugeben.
+    NO Garbage Collection.
+    Algo:  Freispeicherverwaltung
+
+-----------
+
+== Code Segemt:
+     Hier liegt der Maschinencode
+     CODE_SEGMENT
+
+============================================================
+
+Dynamische Daten in Objekten:
+
+== Werden im Kontruktor oder auch in Methodenaufrufen erzeugt
+
+== Leben solange, wie das Objekt lebt
+
+== MÜSSEN im Destruktor freigegeben werden !
+
+Wer erzeugt den Destruktor Aufruf?
+
+a) Globales Objekt:      der Compiler beim Verlassen von main
+b) Lokales Objekt:       der Compiler beim Verlassen der Methode
+c) Dynamisches Objekt:   der Anwender durch den Aufruf von delete !
+
+============================================================
+
+== 650:  ist freigegeben
+
+============================================================
+
+Beobachtung:
+
+a) Für ALLE Objekte in C++ ist die Wertzuweisung implementiert !
+
+b) Wie? Es werden ALLE Instanzvariablen umkopiert -  auch Zeiger !!!
+
+c) Für Zeiger ist diese Vorgehensweise kritisch: 2 Objekte zeigen dann auf DENSELBEN Bereich im Heap.
+
+d) Die beiden Destruktoren wollen DENSELBEN Zeiger mit delete freigeben: Der zweite delete stürzt ab !!!!
+
+e) Diese Standard-Vorgehensweise nennt man "flache Kopie" // "shallow copy"
+
+Konsequenz:
+
+a) Für Klassen, die KEINE Zeiger enthalten, passt das ("flache Kopie")
+
+b) Für Klassen, die Zeiger enthalten, MUSS der =-Operator implementiert werden !!!
+
+c) Diesen Vorgang bezeichnet man als "Deep Copy" / "tiefe Kopie"
+
+====================================================
+
+Zweite Beobachtung:
+
+a) Für ALLE Objekte in C++ ist ein Kopier-Konstruktor standardmäßig implementiert !
+
+b) Wie? Es werden ALLE Instanzvariablen umkopiert -  auch Zeiger !!!
+
+c) Für Zeiger ist diese Vorgehensweise kritisch: 2 Objekte zeigen dann auf DENSELBEN Bereich im Heap.
+
+d) Die beiden Destruktoren wollen DENSELBEN Zeiger mit delete freigeben: Der zweite delete stürzt ab !!!!
+
+e) Diese Standard-Vorgehensweise nennt man "flache Kopie" // "shallow copy"
+
+Konsequenz:
+
+a) Für Klassen, die KEINE Zeiger enthalten, passt das ("flache Kopie")
+
+b) Für Klassen, die Zeiger enthalten, MUSS der Kopier-Konstruktor implementiert werden !!!
+
+c) Diesen Vorgang bezeichnet man als "Deep Copy" / "tiefe Kopie"
+
+====
+
+Damit wären wir bei dem Schlagwort "BIG-THREE" angekommen:
+
+== Destruktor
+== Wertzuweisungs-Operator
+== Kopier-Konstruktor
+
+====
+
+"Rule of ZERO": Ich muss NICHTS beachten :)
+
+Wann kann ich mich auf die "Rule of ZERO" beziehen?
+
+a) Wenn die Klasse keine Pointer (*) enthält
+
+b) Wenn AUSSCHLIEßLICH Klassen aus der STL verwendet werden:
+
+      - Container (std::vector)
+      - Smart Pointer (z.B. std::unique_ptr)
+      - Eben wenn keine klassischen Zeiger verwendet werden
+
+// =================================================
+
+What Is the Correct Way of Loop Through C++ Vector Using Index?
+
+https://jdhao.github.io/2017/10/07/loop-forward-backward-with-cpp-vector/
+
+// =================================================

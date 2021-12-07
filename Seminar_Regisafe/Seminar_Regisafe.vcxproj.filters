@@ -50,5 +50,14 @@
     <Image Include="..\Pointer_vs_Referenz.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="..\Flat_vs-deep_Copy.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Segments.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\StackFrame.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
