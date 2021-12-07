@@ -642,3 +642,8 @@ Functors
 
 // ==================================================
 
+Lösung vom Dienstag (Konten):
+
+Siehe in diesem Projekt Datei "Account.cpp"
+
+// ==================================================
