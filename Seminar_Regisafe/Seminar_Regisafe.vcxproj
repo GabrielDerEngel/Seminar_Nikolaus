@@ -144,6 +144,7 @@
     <ClCompile Include="BigData.cpp" />
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="Vererbung.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BigData.h" />

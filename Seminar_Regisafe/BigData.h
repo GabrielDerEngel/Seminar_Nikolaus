@@ -1,5 +1,7 @@
 namespace BigDataExample {
 
+    // Regisafe::BigDataExample::BigData
+
     class BigData
     {
     private:
@@ -20,9 +22,12 @@ namespace BigDataExample {
         bool isEmpty() const;
 
         // operators
-        void operator= (const BigData&);
+        BigData& operator= (const BigData&);
 
         // output operator
         friend std::ostream& operator<< (std::ostream&, const BigData&);
     };
+
+    // std::ostream& operator<< (std::ostream&, const BigData&);
 }
+

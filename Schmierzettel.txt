@@ -484,16 +484,19 @@ https://jdhao.github.io/2017/10/07/loop-forward-backward-with-cpp-vector/
 
 // =================================================
 
-
 Dienstag:
 
 Dynamische Daten: yes
 
 Big-Three: yes
 
+Korrekte Realisierung des =-Operators:  yes
+
+Ein- und Ausgabe
+
 static
 
-Ternary operator
+Ternary operator: yes
 
 post und pre increment
 
@@ -503,7 +506,7 @@ namespaces / anonyme namespaces
 
 NULL vs. nullptr: yes    
 
-Undefined behaviour
+Undefined behaviour: yes
 
 Vererbung:  virtual / non virtual
 
@@ -511,3 +514,113 @@ Templates (nutzen und selbst programmieren, in einfacher Form)
 
 
 ============================================================
+
+bool result = tmp.isEmpty();
+
+ isEmpty(& tmp);  
+
+ Ein Methodenaufruf objekt-orientiert wird vom Übersetzer
+
+ in einen Funktionsaufruf (nicht objekt-orientiert) übersetzt mit einem ersten
+ unsichtbaren Parameter (this)
+
+ ============================================================
+
+ BigData* ptr;
+ ptr++;
+
+ =============================================================
+
+ static:    Beschreibt globale Variablen oder globale Funktionen, mit einer Besonderheit:
+
+ Ihr Name setzt sich zusammen aus Name_der_Klasse :: Name_des_Elements
+
+ Damit haben sie nicht die Nachteile der "echt" globalen Variablen oder Funktionen
+
+  =============================================================
+
+
+  Vererbung:
+
+  a) Erstes Beispiel:
+
+class Shape
+{
+public:
+    void paint()
+    {
+        std::cout << "paint of Shape" << std::endl;
+    }
+};
+
+class Rectangle : public Shape  // ist-ein Beziegung  // is-a 
+{
+public:
+    void paint()
+    {
+        std::cout << "paint of Rectangle" << std::endl;
+    }
+};
+
+a) Dies solle man im REGELFALL vermeiden.
+
+b) Methode paint in Rectangle sollte einen anderen Namen haben.
+
+   DENN: Auf diese Weise wird paint in Shape verdeckt // hiding.
+
+c) Das Verdecken offenbart eher eine konzeptionelle Schwäche:
+
+  Ich wende einerseits Vererbung an - umgehe sie dann aber mit Verdecken ...........
+
+   --------------------------------------------------
+
+Virtuelle Methoden sind eine Entwurfsentscheidung:
+
+a) Von wem?  Von dem, der die BASISKLASSE // Vaterklasse erstellt.
+
+b) WARUM? 
+
+b1) Prinzipiell werden sie (virtuelle Methoden genauso) vererbt.
+
+b2) Sie können überschrieben werden
+
+b3) Wozu: 
+
+EINS) Um Funktionalität zu einer schon vorhandenen Funktionalität hinzuzufügen / ergänzen
+
+ZWEI) (Sollte selten der Fall sein): Um Funktionalität zu ersetzen (austauschen) (passt die Vererbung wirklich ?)
+
+DREI) Um Funktionalität zu erben.
+
+Feature von XXX:
+
+verschieden:  poly
+Gestalt:      morphus (Körper)
+
+Vielgestaltigkeit:   Polymorphismus
+
+
+// ==================================================
+
+SW-Architekten legen Konzepte fest
+
+Das könnten 'Schnittstellen' sein
+
+Sind BluePrints für Methoden !
+Diese legen die Namen von Methoden, deren Parameter (Name, Typ), deren Rückgabetyp fest!
+Aber haben KEINE Implementierung.
+
+(( C# ist da etwas großzügiger, Java nicht so ganz ))
+
+In C++: Keyword interface nicht vorhanden. 
+
+Ein interface kann aber in C++ "nachgestellt" werden,
+
+wenn ich mich an ein Konzept / Regelwerk halte.
+
+// ==================================================
+
+Unterschied: interface // Abstrakte Klasse
+
+// ==================================================
+

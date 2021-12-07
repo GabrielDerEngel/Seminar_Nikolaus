@@ -6,6 +6,16 @@
 
 #include "BigData.h"
 
+
+// Namensraum ohne Namen:
+// Sein Inhalt ist NUR IN DIESER Datei verfügbar
+namespace {
+    void tueWas() {
+
+    }
+}
+
+
 namespace BigDataExample {
 
     // c'tors and d'tor
@@ -56,32 +66,49 @@ namespace BigDataExample {
         return m_size == 0;
     }
 
-    void BigData::operator= (const BigData& other)
+    // a = b;
+    BigData& BigData::operator= (const BigData& other)
     {
-        // kurze Variante
-        m_size = other.m_size;
-        // m_data = other.m_data;  // NEIN: das ist eine flache Kopie
+        // if (this)  // VÖLLIGER BLÖDSINN 
 
-        // RICHTIG:
+        // Beteiligte: this,  other
+        if ( this != &other ) {  // Yes / Perfekt !!!
 
-        // alte linke Seite freigeben
-        delete[] m_data;
+            // kurze Variante
+            m_size = other.m_size;
+            // m_data = other.m_data;  // NEIN: das ist eine flache Kopie
 
-        // neuen Speicher anlegen
-        m_data = new int[other.m_size];   // jetzt habe ich neuen Speicher auf dem Heap
+            // RICHTIG:
 
-        // umkopieren
-        for (size_t i = 0; i != m_size; ++i) {
-            m_data[i] = other.m_data[i];
+            // alte linke Seite freigeben
+            delete[] m_data;
+
+            // neuen Speicher anlegen
+            m_data = new int[other.m_size];   // jetzt habe ich neuen Speicher auf dem Heap
+
+            // umkopieren
+            for (size_t i = 0; i != m_size; ++i) {
+                m_data[i] = other.m_data[i];
+            }
         }
+
+        return *this;   // BigData*  // Wert des Objekts bezeichen
     }
 
     // output operator
+    
+    // BigData bd, bd1, bd2;
+    // bd = bd1 + bd2;
+    // std::cout << bd;
+    // operator<< (std::ostream& os, const BigData& data
+    
     std::ostream& operator<< (std::ostream& os, const BigData& data) {
-        constexpr bool verbose = false;
+        constexpr bool verbose  = false;
+        const     bool verbose2 = false;
 
         os << "Size: " << data.m_size << " - Data at " << data.m_data;
-        if constexpr (verbose) {
+        if constexpr (verbose)    // a) false   / b) true
+        {
             os << std::endl;
             os << "{";
             for (size_t i = 0; i < data.m_size; i++) {
@@ -103,6 +130,12 @@ namespace BigDataExample {
     void test_01_move_semantics() {
 
         BigData data;
+
+        // std::cout.write("sdfsdf");
+
+        // printf // C++ 20
+        // std::fmt("%d"), std::format
+
         std::cout << data << std::endl;
         data = createHugeData();
         std::cout << data << std::endl;
@@ -142,7 +175,23 @@ namespace BigDataExample {
         BigData data(2, 1);  // lokal
         BigData tmp(3, 5);
 
-        tmp = data;
+        bool result = tmp.isEmpty();
+
+        // Maschinencode:  Aufruf -- call // 
+
+        // isEmpty(& tmp);  // Ein Methodenaufruf 
+
+        tmp = data;  // okay
+
+        int a, b, c, d, e;
+        a = b = c = d = e = 1;
+
+        a = a;
+        tmp = tmp;   // Suizid  // Wiederauferstehung
+
+        // tmp = tmp + 1;   // temporäres Objekt  // mutable / immutable
+
+        tmp = (tmp = data);  // Mehrfachwertzuweisung
     }
 
     void test_04_big_data()
@@ -158,7 +207,7 @@ void test_big_data()
 {
     using namespace BigDataExample;
 
-    test_04_big_data();
+    test_03_big_data();
 }
 
 // =====================================================================================

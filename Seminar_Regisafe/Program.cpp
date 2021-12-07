@@ -1,15 +1,94 @@
 #include "Date.h"
 
+extern void testVererbung();
+extern void testVererbungZWEI();
+
 extern void test_big_data();
+
+extern void tueWas();
+
+// static
+// Wir wollen alle erzeugten Objekte von Beispiel zählen:
+
+// int m_counter = 0;
+
+class Beispiel
+{
+public:
+    Beispiel()
+    {
+        ++m_counter;
+    }
+
+    inline static int getCounter() { return m_counter; }
+
+private:
+    inline static int m_counter{ 0 };  // modern // jetzt gibt es m_couter nur EINMAL 
+};
+
+//int Beispiel::m_counter = 0;   // klassisch
+
+
+int testTernaryOperator()
+{
+    int a = 0;
+    int b = 0;
+
+    int x = 1;
+    int y = 2;
+
+    if (x < y) {
+        a = 1;
+    }
+    else {
+        a = -1;
+    }
+
+    // a = (bedingung) ? statement1 : statement2;
+
+    a = (x < y) ? 1 : -1;  // identisch zu oben
+
+    a = (x > y) ? 100 : 200;
+
+    a = (x < y) ? 
+        (x > y) ? 100 : 200 :
+        (x > y) ? 300 : 400;  // Geht! ????????????????? Eher nicht :)
+
+    a = (x < y) ? b = 10 : b = -11;  // identisch zu oben
+
+    if (x < y) {
+        return 1;
+    }
+    else {
+        return 2;
+    }
+
+    return (x < y) ? 1 : -1;
+}
+
+
+
+void testCounter()
+{
+    int counter = Beispiel::getCounter();
+
+    // int counter = ZweitesBeispiel::getCounter();
+
+    Beispiel eins;
+    Beispiel zwei;
+    Beispiel drei;
+
+    counter = Beispiel::getCounter();
+}
 
 
 int g_global = 123;
 
 void void_stack_vs_heap(int n)
 {
-    int* ip = new int;
+    int* ip = new int[1000];
 
-    delete ip;
+    delete ip;   // undefined (unknown) behaviour // is it the correct behaviour
 }
 
 void swap_with_copy(int n, int m)
@@ -106,7 +185,11 @@ void test_date()
 
 int main() 
 {
-    test_big_data();
+    // tueWas();
+    testVererbungZWEI();
+    //testTernaryOperator();
+    //testCounter();
+    //test_big_data();
     //void_stack_vs_heap(20);
     //test_date_02();
     //test_date();
