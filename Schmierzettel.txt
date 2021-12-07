@@ -361,32 +361,6 @@ https://github.com/pelocpp/cpp_general_examples/blob/master/Examples/Fraction/Re
 
 ============================================================
 
-Dienstag:
-
-Dynamische Daten
-
-Big-Three
-
-static
-
-Ternary operator
-
-post und pre increment
-
-shallow-copy und deep-copy
-
-namespaces / anonyme namespaces
-
-NULL vs. nullptr    
-
-Undefined behaviour
-
-Vererbung:  virtual / non virtual
-
-Big-Five oder viele der Details abarbeiten.
-
-============================================================
-
 Welche Lebensdauer bzgl. Objekten gibt es in C++:
 
 == Lokale Variablen / Objekte ("wenn der Scope verlassen wird")
@@ -509,3 +483,31 @@ What Is the Correct Way of Loop Through C++ Vector Using Index?
 https://jdhao.github.io/2017/10/07/loop-forward-backward-with-cpp-vector/
 
 // =================================================
+
+
+Dienstag:
+
+Dynamische Daten: yes
+
+Big-Three: yes
+
+static
+
+Ternary operator
+
+post und pre increment
+
+shallow-copy und deep-copy: yes
+
+namespaces / anonyme namespaces
+
+NULL vs. nullptr: yes    
+
+Undefined behaviour
+
+Vererbung:  virtual / non virtual
+
+Templates (nutzen und selbst programmieren, in einfacher Form)
+
+
+============================================================

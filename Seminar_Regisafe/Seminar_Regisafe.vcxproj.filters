@@ -42,6 +42,7 @@
   <ItemGroup>
     <None Include="..\Agenda_Grundlagen_Regisafe.md" />
     <None Include="..\Fraction.md" />
+    <None Include="..\Accounts.md" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Parameters_On_The_Stack.png">
@@ -57,6 +58,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="..\StackFrame.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Bankkonto_Zinssatz.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

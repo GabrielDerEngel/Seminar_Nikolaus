@@ -27,8 +27,8 @@
 ## Details
 
   * ctor und dtor (auch "= default") - YES / teilweise
-  * raw-pointer und smart-pointer (im Rahmen der Grundlagen)
-  * Rule of Three/Five/Zero
+  * raw-pointer und smart-pointer (im Rahmen der Grundlagen) - YES / teilweise
+  * Rule of Three/Five/Zero - YES / teilweise
   * Operator overloading - YES
   * Klassendesign (information hiding, best practices) - YES
   * Schlüsselwort "this" - YES

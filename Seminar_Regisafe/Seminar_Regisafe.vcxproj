@@ -154,10 +154,12 @@
     <Text Include="..\Schmierzettel.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Accounts.md" />
     <None Include="..\Agenda_Grundlagen_Regisafe.md" />
     <None Include="..\Fraction.md" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\Bankkonto_Zinssatz.png" />
     <Image Include="..\Flat_vs-deep_Copy.png" />
     <Image Include="..\Parameters_On_The_Stack.png" />
     <Image Include="..\Pointer_vs_Referenz.png" />
