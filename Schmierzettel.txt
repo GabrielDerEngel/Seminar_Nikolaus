@@ -752,3 +752,84 @@ Freestyle :)
 
 // ==================================================
 
+Lösung:
+
+https://github.com/pelocpp/cpp_general_examples/tree/master/Examples/PhoneBook
+
+// ==================================================
+
+
+
+for ( cont Contact& entry  : m_phoneVector ) {
+     os << entry;
+}
+
+C++ 20 (ab C++ 17):
+
+for (int i = 0; cont Contact& entry : m_phoneVector ) {
+     os << i << entry << std::endl;
+     ++i;
+}
+
+oder:
+
+int i = 0;
+for (const Contact& entry : m_phoneVector ) {
+     os << i << entry << std::endl;
+     ++i;
+}
+
+oder:
+
+{
+    int i = 0;
+    for (const Contact& entry : m_phoneVector ) {
+         os << i << entry << std::endl;
+         ++i;
+    }
+}
+
+// no more i
+
+std::for_each // Lambda
+
+// std::string ==> std::string_view   (read-only, MUSS NICHT AM HEAP SEIN)
+
+C++ 20: std::string_view ("Hans");   // NICHT am Heap (new) // am Code-Segment // im Data-Segment
+
+In einer Richtung ja, in der anderen nein:
+
+func (std::string_view par)
+
+std::string sepp{"Sepp"};
+==> func (sepp);
+
+std::string_view: 2 Variablen
+a) size_t m_len;
+b) const char* m_ptr;
+
+// No Heap: 
+std::string_view 
+std::vector<T>  ==> std::initializer_list<T> (no heap / stack)
+
+// ========================================================
+
+std::ranges
+
+Ist eine Entwicklung von Eric Niebler
+
+ranges-v3
+
+Umfangreiche Implementierung:
+
+https://github.com/ericniebler/range-v3
+
+Leider ist nur EIN TEIL (kleiner Teil) in den C++ Standard 20 eingeflossen.
+
+Eine gute Literatur:
+
+https://mariusbancila.ro/blog/2019/01/20/cpp-code-samples-before-and-after-ranges/
+
+// ========================================================
+
+

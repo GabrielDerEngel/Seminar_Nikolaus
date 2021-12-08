@@ -32,33 +32,33 @@
   * Operator overloading - YES
   * Klassendesign (information hiding, best practices) - YES
   * Schlüsselwort "this" - YES
-  * initializer list
+  * initializer list - KOMMT NOCH
   * Delegierter ctor Aufruf - YES
   * Aufteilung von Code in CPP und Header Dateien - YES
   * Include Guard - YES
-  * namespaces
+  * namespaces - YES
   * NULL vs. nullptr (wir nutzen noch oft "NULL" im alten Code) - YES
   * Bedeutung von inline - YES
   * Bedeutung von const und const-correctness (ebenfalls constexpr)
-  * Bedeutung von static
-  * anonyme namespaces
-  * new und delete (und die Risiken + Alternativen (RAII))
+  * Bedeutung von static - YES
+  * anonyme namespaces - YES
+  * new und delete (und die Risiken + Alternativen (RAII)) - KOMMT NOCH / Smart Pointer
   * default argumente bei Funktionen
-  * L- und R-Values
+  * L- und R-Values - KOMMT NOCH
   * Objektmodell C++ (Kopien vs. Referenzen (vs. Pointer), Rückgabe von Objekten (copy-elision))
-  * std::move
-  * shallow-copy und deep-copy
+  * std::move - KOMMT NOCH  // Big Five
+  * shallow-copy und deep-copy - YES
   * Container aus der Standardbibliothek (wann welchen Nutzen, Vorteile und Nachteile einzelner Container)
-  * Vererbung: public, private, protected ... virtual methods, pure virtual classes usw.
+  * Vererbung: public, private, protected ... virtual methods, pure virtual classes usw. - YES
   * Stack und Heap - YES / teilweise
   * Gefahr von nicht initialisierten fundamentalen Datentypen
-  * Undefined behaviour
-  * "Arten" von for-loops ("alte" for loop (Zählvariable "i"), iterator for loop, range-based for loop)
+  * Undefined behaviour - YES
+  * "Arten" von for-loops ("alte" for loop (Zählvariable "i"), iterator for loop, range-based for loop) - YES
   * post und pre increment
-  * Iteratoren
-  * algorithm-Header
-  * using und typedef
-  * templates (nutzen und selbst programmieren, in einfacher Form)
-  * Ternary operator (wird bei uns häufig in alten Code genutzt)
-  * structured Binding
+  * Iteratoren - YES
+  * algorithm-Header - YES
+  * using und typedef - YES
+  * templates (nutzen und selbst programmieren, in einfacher Form) - YES
+  * Ternary operator (wird bei uns häufig in alten Code genutzt) - YES
+  * structured Binding - KOMMT NOCH
 
