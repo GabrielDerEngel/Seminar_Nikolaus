@@ -30,6 +30,12 @@
     <ClCompile Include="Account.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Schablonen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="STLcpp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BigData.h">
@@ -49,6 +55,7 @@
     <None Include="..\Agenda_Grundlagen_Regisafe.md" />
     <None Include="..\Fraction.md" />
     <None Include="..\Accounts.md" />
+    <None Include="..\PhoneBook.md" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Parameters_On_The_Stack.png">

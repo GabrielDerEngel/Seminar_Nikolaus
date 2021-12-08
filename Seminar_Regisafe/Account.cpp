@@ -3,26 +3,33 @@
 namespace AccountsSeminar {
 
     // Reduktion / Beschreibung einer Rolle / eines Aspekts
+    // Schnitttelle / Interface
     class IAccount
     {
     public:
         // virtuelle Basisklassendestruktor
-         virtual ~IAccount() = default;
+        virtual ~IAccount() = default;  // Call-to-Action: IMMER 
         //virtual ~IAccount() { std::cout << "in ~IAccount" << std::endl; }
 
         // getter/setter
         virtual double getAccountNumber() const = 0;
-        virtual double getBalance() = 0;
+        virtual double getBalance() const = 0;
 
         // public interface
         virtual void deposit(double amount) = 0;
         virtual bool withdraw(double amount) = 0;
         virtual bool transfer(double amount, int from, int to) = 0;  // nicht perfekt :(
         virtual void print(std::ostream& os) = 0;
+
+        // https://stackoverflow.com/questions/2059058/c-abstract-class-operator-overloading-and-interface-enforcement-question
+        friend std::ostream& operator<< (std::ostream& os, const IAccount& da);
     };
 
     // ===========================================================
 
+    // Abstrakte Basisklasse / Unvollständige Klasse
+    // a) Einige Teile des Kontrakts (Vertrag IAccount) werden realisiert
+    // b) Instanzvariablen, die für alle Kindklassen relevant sind, werden definiert (protected)
     class Account : public IAccount
     {
     protected:
@@ -37,14 +44,14 @@ namespace AccountsSeminar {
         virtual ~Account() { std::cout << "in ~Account" << std::endl; }
 
         // getter / setter
-        double getAccountNumber()  const override final ;
-        double getBalance() final override;
+        virtual double getAccountNumber() const override final;
+        virtual double getBalance() const final override;
 
         // public interface
         virtual void deposit(double amount) final override;
 
-        // fantasy
-        bool transfer(double amount, int from, int to) final override;
+        // 
+        virtual bool transfer(double amount, int from, int to) final override;
     };
 
     Account::Account(int accountNumber) : m_accountNumber(accountNumber) {
@@ -61,10 +68,10 @@ namespace AccountsSeminar {
     // Abgeleitete Klassen stellen die Realisierungsmethoden bereit
     bool Account::transfer(double amount, int from, int to) {
 
-        if (!withdraw(amount))
+        if (! withdraw(amount))
             return false;
 
-        deposit(amount); 
+        deposit(to); 
         return true;
     }
 
@@ -72,7 +79,7 @@ namespace AccountsSeminar {
         return m_accountNumber;
     }
 
-    double Account::getBalance() {
+    double Account::getBalance() const {
         return m_balance;
     }
 
@@ -203,19 +210,18 @@ void test_accounts()
 
     std::cout << "Testing accounts:" << std::endl;
 
-    CurrentAccount ca(123456, 1000);
-    ca.deposit(100);
-    ca.withdraw(40);
-    ca.transfer(1, 2, 3);
-    std::cout << ca << std::endl;
+    //CurrentAccount ca(123456, 1000);
+    //ca.deposit(100);
+    //ca.withdraw(40);
+    //ca.transfer(1, 2, 3);
+    //std::cout << ca << std::endl;
 
-    DepositAccount da(654321, 4.0);
-    da.deposit(200);
-    da.withdraw(120);
-    da.computeInterest(31);
-    std::cout << da << std::endl;
+    //DepositAccount da(654321, 4.0);
+    //da.deposit(200);
+    //da.withdraw(120);
+    //da.computeInterest(31);
+    //std::cout << da << std::endl;
 
-
-    //IAccount* pIA = new CurrentAccount (123456, 1000);
-    //delete pIA;
+    IAccount* pIA = new CurrentAccount (123456, 1000);
+    delete pIA;
 }

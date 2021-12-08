@@ -4,6 +4,8 @@ extern void testVererbung();
 extern void testVererbungZWEI();
 extern void test_accounts();
 extern void test_big_data();
+extern void test_schablonen();
+extern void test_STL();
 
 // static
 // Wir wollen alle erzeugten Objekte von Beispiel zählen:
@@ -86,7 +88,7 @@ void void_stack_vs_heap(int n)
 {
     int* ip = new int[1000];
 
-    delete ip;   // undefined (unknown) behaviour // is it the correct behaviour
+    delete[] ip;   // undefined (unknown) behaviour // is it the correct behaviour
 }
 
 void swap_with_copy(int n, int m)
@@ -183,7 +185,9 @@ void test_date()
 
 int main() 
 {
-    test_accounts();
+    test_STL();
+    // test_schablonen();
+    //test_accounts();
     //testVererbungZWEI();
     //testTernaryOperator();
     //testCounter();

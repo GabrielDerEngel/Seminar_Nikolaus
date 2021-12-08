@@ -646,4 +646,83 @@ Lösung vom Dienstag (Konten):
 
 Siehe in diesem Projekt Datei "Account.cpp"
 
+oder
+
+https://github.com/pelocpp/cpp_general_examples/blob/master/Examples/AccountsAndBank/Resources/Readme.md
+
+// ==================================================
+
+Klassenbibliothek zu C++:    STL   Standard  Template Klassen
+
+Begriffe:
+
+== Container
+
+     Eine Reihe von Klassen mit, die Daten aufnehmen können
+
+     std::vector: Wie ein C-Array, nur Länge ist flexibel.
+
+     std::map:     Container für Schlüssel (Id) und Wert  (Telefonbuch: Schlüssel = Name, Wert = Tel.Nr.)
+
+     std::stack
+     std::deque
+
+== Iteratoren
+
+   - Beschreiben eine Position im Container
+   - Ermöglichen Zugriff auf ein Element im Container
+
+   - Besonderheit: Sie sind KONZEPTIONELL definiert (Ja, es gibt C++-Klassen, die sie implementieren)
+        Wir werden ihre - auf Grund des Iteratoren-Konzepts - vorhandenen Methoden! 
+
+   - Auf die Schnelle:
+     == Der Container muss begin(), end() unterstützen
+     == Die Objekte, die von begin() und end() zurückgeliefert werden,
+        müssen im einfachsten Fall die Operatoren * (Dereferenziere, gibt mir Wert),
+        ++ (zum nächsten Wert) und != (Vergleich mit Ende) unterstützen.
+
+    Beispiel:
+
+    https://github.com/pelocpp/cpp_general_examples/blob/master/Examples/CustomIterator/CustomIterator.cpp
+
+    - Besonderheit: end() "zeigt" auf das Element NACH DEM LETZTEN Element im Container
+
+== Algorithmen
+
+   - Traversieren eines Container
+   - Suchen in einem Container
+   - Umwandeln eines Containers 
+   - ............
+
+
+== Konzept: Container , Iteratoren und Algorithmen:
+
+    - Eine einheitliche Vorgehensweise
+
+    - Die STL basiert auf "Bausteinen" // ist eine andere Herangehensweise
+
+    - Dieser Stil weist Ähnlichkeiten mit der "funktionalen" Programmierung auf:
+      == map: abbilden von Typ a auf Typ b
+      == fold: n Element auf 1 verdichten
+      == reduce (filter):  Aus n Elementen m rausfiltern
+      == transform (map)
+
+    - Die Betrachtung von Containern, Iteratoren und Algorithmen ist so gedacht:
+
+      Containern <===> Iteratoren <===> Algorithmen
+
+      Also anders herum: Algorithmen kennen keine Container (sondern Iteratoren)
+
+    - Modern C++: "foreach" bzw. range-based-loop: Sie ignoriert die klassische Betrachtung:
+      Der Container wird ohne Iterator traversiert - an der Sprachoberfläche.
+      Intern hat sich NICHTS geändert.
+       
+
+== Funktoren
+== Lambdas
+
+== Übung (  bis 16.30)
+
+== 16.30 bis 17.00 : Besprechung der Lösung und Blick auf Modern C++
+
 // ==================================================

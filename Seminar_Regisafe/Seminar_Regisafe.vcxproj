@@ -145,6 +145,8 @@
     <ClCompile Include="BigData.cpp" />
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="Schablonen.cpp" />
+    <ClCompile Include="STLcpp.cpp" />
     <ClCompile Include="Vererbung.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +161,7 @@
     <None Include="..\Accounts.md" />
     <None Include="..\Agenda_Grundlagen_Regisafe.md" />
     <None Include="..\Fraction.md" />
+    <None Include="..\PhoneBook.md" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Bankkonto_Zinssatz.png" />
