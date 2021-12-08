@@ -726,3 +726,29 @@ Begriffe:
 == 16.30 bis 17.00 : Besprechung der Lösung und Blick auf Modern C++
 
 // ==================================================
+
+
+Übung Telefonbuch:
+
+a) Klasse Contact:
+
+   std::string Vorname
+   std::string Nachname
+   long nummer
+
+b) std::vector<Contact> myPhonebook;
+
+c) Optional: Klasse Phonebook mit Instanzvariable m_phonebook; // vom Typ std::vector<Contact>
+
+d) Mit push_back das Telefonbuch füllen (3, 4 Kontakt)
+
+e) Ausgabe des Telefonbuchs auf der Konsole
+
+f) Suche nach einem Eintrag: Es sind Vor- und Nachname bekannt - gesucht ist die Nummer.
+
+g) Sortieren des Telefonbuch
+
+Freestyle :)
+
+// ==================================================
+

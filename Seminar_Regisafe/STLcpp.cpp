@@ -172,7 +172,7 @@ void test_STL()
     // ------------------------------------
     // lambda
 
-    int local_Gesucht = 4;
+    int local_Gesucht = 4;  // "Hans"  / 
 
     result = std::find_if(
         vec.begin(),           // Iteratoren-Objekt für den Anfang
